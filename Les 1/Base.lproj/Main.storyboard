@@ -94,60 +94,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VnQ-oh-3FQ">
-                                <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnQ-oh-3FQ">
+                                <rect key="frame" x="0.0" y="64" width="340" height="687"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ki3-g8-ixq" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="1200"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ki3-g8-ixq" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="687"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Qt-aP-Obm">
-                                                <rect key="frame" x="0.0" y="72" width="359" height="248"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Qt-aP-Obm">
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="248"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZT-4N-qag" userLabel="titleLabel">
-                                                <rect key="frame" x="0.0" y="342" width="359" height="56"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZT-4N-qag" userLabel="titleLabel">
+                                                <rect key="frame" x="8" y="256" width="324" height="33"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Title">
+                                                        <attributes>
+                                                            <font key="NSFont" size="17" name=".SFNSText"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvV-b7-lpo" userLabel="descriptionLabel">
-                                                <rect key="frame" x="0.0" y="83" width="359" height="809"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xva-ne-F72">
-                                                <rect key="frame" x="16" y="406" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xva-ne-F72">
+                                                <rect key="frame" x="16" y="297" width="30" height="30"/>
                                                 <state key="normal" title="Like"/>
                                                 <connections>
                                                     <action selector="likeOrDislike:" destination="xCA-j6-doZ" eventType="touchUpInside" id="uEg-Qk-NFK"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="5000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvV-b7-lpo" userLabel="descriptionLabel">
+                                                <rect key="frame" x="8" y="335" width="324" height="344"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Label">
+                                                        <attributes>
+                                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1200" id="ahh-SQ-Vm8"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Qt-aP-Obm" secondAttribute="trailing" id="9Xm-jj-4g2"/>
+                                            <constraint firstItem="0Qt-aP-Obm" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" id="D4k-GP-Ro9"/>
+                                            <constraint firstAttribute="trailing" secondItem="1ZT-4N-qag" secondAttribute="trailing" constant="8" id="JX8-4y-qmF"/>
+                                            <constraint firstAttribute="trailing" secondItem="KvV-b7-lpo" secondAttribute="trailing" constant="8" id="JxT-8t-sc7"/>
+                                            <constraint firstItem="KvV-b7-lpo" firstAttribute="top" secondItem="xva-ne-F72" secondAttribute="bottom" constant="8" id="Kfh-cc-ic1"/>
+                                            <constraint firstItem="0Qt-aP-Obm" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" id="Laq-wT-zxf"/>
+                                            <constraint firstItem="0Qt-aP-Obm" firstAttribute="top" secondItem="ki3-g8-ixq" secondAttribute="top" id="MSp-Hf-ORt"/>
+                                            <constraint firstItem="xva-ne-F72" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" constant="16" id="QFM-hc-Zz2"/>
+                                            <constraint firstItem="xva-ne-F72" firstAttribute="top" secondItem="1ZT-4N-qag" secondAttribute="bottom" constant="8" id="WQg-nB-GFS"/>
+                                            <constraint firstAttribute="bottom" secondItem="KvV-b7-lpo" secondAttribute="bottom" constant="8" id="aK0-cA-aez"/>
+                                            <constraint firstItem="KvV-b7-lpo" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" constant="8" id="awI-tK-CPT"/>
+                                            <constraint firstItem="1ZT-4N-qag" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" constant="8" id="kkv-JW-pSl"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Qt-aP-Obm" secondAttribute="trailing" id="xlV-tt-Ypr"/>
+                                            <constraint firstItem="1ZT-4N-qag" firstAttribute="top" secondItem="0Qt-aP-Obm" secondAttribute="bottom" constant="8" id="yU7-Pm-mFt"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ki3-g8-ixq" secondAttribute="bottom" id="7Cl-oS-QNK"/>
+                                    <constraint firstItem="ki3-g8-ixq" firstAttribute="top" secondItem="VnQ-oh-3FQ" secondAttribute="top" id="BvE-Ln-EZG"/>
                                     <constraint firstItem="ki3-g8-ixq" firstAttribute="width" secondItem="VnQ-oh-3FQ" secondAttribute="width" id="Hun-bf-7Zi"/>
                                     <constraint firstAttribute="trailing" secondItem="ki3-g8-ixq" secondAttribute="trailing" id="IzW-DK-wvV"/>
-                                    <constraint firstAttribute="bottom" secondItem="ki3-g8-ixq" secondAttribute="bottom" id="hXb-Az-edQ"/>
-                                    <constraint firstItem="ki3-g8-ixq" firstAttribute="top" secondItem="VnQ-oh-3FQ" secondAttribute="top" id="ntK-Wo-Gdm"/>
                                     <constraint firstItem="ki3-g8-ixq" firstAttribute="leading" secondItem="VnQ-oh-3FQ" secondAttribute="leading" id="v8e-bV-Ifw"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VnQ-oh-3FQ" firstAttribute="top" secondItem="GeC-u3-I2O" secondAttribute="top" id="Clx-iy-2Lf"/>
                             <constraint firstItem="VnQ-oh-3FQ" firstAttribute="leading" secondItem="GeC-u3-I2O" secondAttribute="leading" id="Fbf-Hr-G8D"/>
                             <constraint firstAttribute="bottom" secondItem="VnQ-oh-3FQ" secondAttribute="bottom" id="cNh-0Q-FhM"/>
-                            <constraint firstItem="VnQ-oh-3FQ" firstAttribute="trailing" secondItem="GeC-u3-I2O" secondAttribute="trailing" id="mMX-mk-fnG"/>
-                            <constraint firstItem="VnQ-oh-3FQ" firstAttribute="top" secondItem="qxC-nf-Wp8" secondAttribute="top" id="vT3-vM-Yba"/>
+                            <constraint firstItem="VnQ-oh-3FQ" firstAttribute="bottom" secondItem="GeC-u3-I2O" secondAttribute="bottom" id="fiw-w4-Dzh"/>
+                            <constraint firstItem="VnQ-oh-3FQ" firstAttribute="width" secondItem="qxC-nf-Wp8" secondAttribute="width" id="g1U-Zd-TpZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GeC-u3-I2O"/>
                     </view>
