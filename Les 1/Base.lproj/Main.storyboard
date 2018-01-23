@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nis-ya-Zyn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nis-ya-Zyn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,25 +25,47 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OB4-E4-E6r">
-                                            <rect key="frame" x="152" y="0.0" width="223" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OB4-E4-E6r">
+                                            <rect key="frame" x="108" y="8" width="259" height="21"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="17"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-Id-Hm7">
-                                            <rect key="frame" x="0.0" y="-15" width="144" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-Id-Hm7">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="U73-5O-WME"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxR-hf-DEU">
-                                            <rect key="frame" x="152" y="39" width="223" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxR-hf-DEU">
+                                            <rect key="frame" x="108" y="34" width="259" height="60"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="10"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="OB4-E4-E6r" secondAttribute="trailing" constant="8" id="6dS-Gc-kE2"/>
+                                        <constraint firstItem="OB4-E4-E6r" firstAttribute="top" secondItem="g3o-6y-lfz" secondAttribute="top" constant="8" id="E1h-nd-rlP"/>
+                                        <constraint firstItem="yxR-hf-DEU" firstAttribute="leading" secondItem="Khk-Id-Hm7" secondAttribute="trailing" constant="8" id="Gzd-Qj-72S"/>
+                                        <constraint firstAttribute="bottom" secondItem="yxR-hf-DEU" secondAttribute="bottom" constant="8" id="XEl-eu-oDr"/>
+                                        <constraint firstItem="OB4-E4-E6r" firstAttribute="leading" secondItem="Khk-Id-Hm7" secondAttribute="trailing" constant="8" id="Z1y-B1-LLV"/>
+                                        <constraint firstItem="Khk-Id-Hm7" firstAttribute="top" secondItem="g3o-6y-lfz" secondAttribute="top" id="a6i-aJ-dcn"/>
+                                        <constraint firstAttribute="bottom" secondItem="Khk-Id-Hm7" secondAttribute="bottom" id="m9i-An-tn5"/>
+                                        <constraint firstAttribute="trailing" secondItem="yxR-hf-DEU" secondAttribute="trailing" constant="8" id="rUy-LY-hWM"/>
+                                        <constraint firstItem="yxR-hf-DEU" firstAttribute="top" secondItem="OB4-E4-E6r" secondAttribute="bottom" constant="5" id="sbv-Ic-tGw"/>
+                                        <constraint firstItem="Khk-Id-Hm7" firstAttribute="leading" secondItem="g3o-6y-lfz" secondAttribute="leading" id="yo1-Gz-kHd"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="cellImageView" destination="Khk-Id-Hm7" id="2un-M4-0nn"/>

@@ -18,22 +18,18 @@ class TableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // Initialization code
     }
-    public func runImageFetch(){
-        fetchImage()
-    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
-    public func setData(){
-        lableTitle.text = article?.title
-        lableDescription.text = article?.summary;
+    public func load(){
+        lableTitle.text = article.title
+        lableDescription.text = article.summary;
+        self.fetchImage()
     }
+
     private func fetchImage() {
         let imageURL = URL(string: (article.image))
         var image: UIImage?
@@ -44,7 +40,7 @@ class TableViewCell: UITableViewCell {
                 DispatchQueue.main.async {
                     if imageData != nil {
                         image = UIImage(data: imageData! as Data)
-                        self.imageView?.image = image
+                        self.cellImageView.image = image
                     } else {
                         image = nil
                     }
