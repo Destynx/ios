@@ -15,7 +15,6 @@
 		51955C9A1F8DFF9600F11E1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51955C991F8DFF9600F11E1D /* AppDelegate.swift */; };
 		51955C9C1F8DFF9600F11E1D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51955C9B1F8DFF9600F11E1D /* DetailsViewController.swift */; };
 		51955C9F1F8DFF9600F11E1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51955C9D1F8DFF9600F11E1D /* Main.storyboard */; };
-		51955CA21F8DFF9600F11E1D /* Les_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51955CA01F8DFF9600F11E1D /* Les_1.xcdatamodeld */; };
 		51955CA41F8DFF9600F11E1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51955CA31F8DFF9600F11E1D /* Assets.xcassets */; };
 		51955CA71F8DFF9600F11E1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51955CA51F8DFF9600F11E1D /* LaunchScreen.storyboard */; };
 		51955CB31F8E042500F11E1D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51955CB21F8E042500F11E1D /* TableViewController.swift */; };
@@ -34,7 +33,6 @@
 		51955C991F8DFF9600F11E1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51955C9B1F8DFF9600F11E1D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		51955C9E1F8DFF9600F11E1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		51955CA11F8DFF9600F11E1D /* Les_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Les_1.xcdatamodel; sourceTree = "<group>"; };
 		51955CA31F8DFF9600F11E1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51955CA61F8DFF9600F11E1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51955CA81F8DFF9600F11E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,20 +92,35 @@
 		51955C981F8DFF9600F11E1D /* Newsreader */ = {
 			isa = PBXGroup;
 			children = (
+				E99CDC592017F3E50024B006 /* Controllers */,
+				E99CDC582017F3D90024B006 /* Views */,
 				514E8FDE1F8E471D0038DDB1 /* Services */,
 				51379D9D1F8E36F000F23075 /* Models */,
-				51955C991F8DFF9600F11E1D /* AppDelegate.swift */,
-				51955C9B1F8DFF9600F11E1D /* DetailsViewController.swift */,
-				51955C9D1F8DFF9600F11E1D /* Main.storyboard */,
 				51955CA31F8DFF9600F11E1D /* Assets.xcassets */,
-				51955CA51F8DFF9600F11E1D /* LaunchScreen.storyboard */,
+				51955C991F8DFF9600F11E1D /* AppDelegate.swift */,
 				51955CA81F8DFF9600F11E1D /* Info.plist */,
-				51955CA01F8DFF9600F11E1D /* Les_1.xcdatamodeld */,
+			);
+			path = Newsreader;
+			sourceTree = "<group>";
+		};
+		E99CDC582017F3D90024B006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				51955C9D1F8DFF9600F11E1D /* Main.storyboard */,
+				51955CA51F8DFF9600F11E1D /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E99CDC592017F3E50024B006 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				51955C9B1F8DFF9600F11E1D /* DetailsViewController.swift */,
 				51955CB21F8E042500F11E1D /* TableViewController.swift */,
 				51955CB41F8E090A00F11E1D /* TableViewCell.swift */,
 				51EFB70D1FAF999700558FAC /* LoginViewController.swift */,
 			);
-			path = Newsreader;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +203,6 @@
 				51EFB7101FAFC08000558FAC /* AuthToken.swift in Sources */,
 				51955C9A1F8DFF9600F11E1D /* AppDelegate.swift in Sources */,
 				51955CB31F8E042500F11E1D /* TableViewController.swift in Sources */,
-				51955CA21F8DFF9600F11E1D /* Les_1.xcdatamodeld in Sources */,
 				5159EDF21F8F62AF008CE9CC /* WebService.swift in Sources */,
 				514E8FDD1F8E3CFE0038DDB1 /* Category.swift in Sources */,
 				51EFB70E1FAF999700558FAC /* LoginViewController.swift in Sources */,
@@ -380,19 +392,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		51955CA01F8DFF9600F11E1D /* Les_1.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				51955CA11F8DFF9600F11E1D /* Les_1.xcdatamodel */,
-			);
-			currentVersion = 51955CA11F8DFF9600F11E1D /* Les_1.xcdatamodel */;
-			path = Les_1.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 51955C8E1F8DFF9600F11E1D /* Project object */;
 }
