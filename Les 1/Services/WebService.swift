@@ -8,6 +8,57 @@
 
 import UIKit
 
-class WebService: NSObject {
-
+class WebService{
+    static let sharedInstance: WebService = {
+        let instance = WebService()
+        let manager : ApiManager = ApiManager()
+        var articleList : [Article] = []
+        var authToken : AuthToken!
+        return instance
+    }()
+    private let manager : ApiManager = ApiManager()
+    var articleList : [Article] = []
+    var authToken : AuthToken!
+    
+    
+    func getRootObject (withSuccess success: @escaping (RootObject)-> ()) {
+        manager.getArticles(withSuccess: { (rootObject) in
+            success(rootObject)
+        }) { (error:String) in
+            
+        }
+    }
+    
+    func getMoreRootObjects (nextId : Int, withSuccess success: @escaping (RootObject)-> ()) {
+        manager.getMoreArticles(nextId: nextId, withSuccess: { (rootObject) in
+            success(rootObject)
+        }) { (error:String) in
+            
+        }
+    }
+    
+    
+    
+    func executeLogin (username : String, password : String, withSuccess success: @escaping (Bool)-> ()) {
+        manager.login(username: username, password : password, withSucces: { (AuthToken) in
+            success(true)
+            self.authToken = AuthToken
+        }) { (error:String) in
+            
+        }
+    }
+    func likeArticle(Id : Int){
+        manager.likeArticle(Authtoken : self.authToken.AuthToken, Id: Id)
+    }
+    
+    func unLikeArticle(Id : Int){
+        manager.unLikeArticle(Authtoken : self.authToken.AuthToken, Id: Id)
+    }
+    
+    func loguout(){
+        if(authToken != nil){
+            authToken = nil;
+        }
+        
+    }
 }

@@ -9,10 +9,22 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
+    var articleList: [Article] = [ ]
+    var nextId : Int = 0
+    let webservice = WebService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        webservice.getRootObject(withSuccess: { (rootObject) in
+            
+            self.articleList = rootObject.results
+            self.nextId = rootObject.nextId
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,24 +40,60 @@ class TableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return articleList.count
     }
-
-    /*
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){   /*Get the new view controller using segue.destinationViewController.*/  /* Pass the selected object to the new view controller.*/
+        if let viewController = segue.destination as? DetailsViewController
+        {
+            if let cell = sender as? TableViewCell
+            {
+                viewController.article = cell.article
+                viewController.titleText = cell.lableTitle.text;
+                viewController.descriptionText = cell.lableDescription.text;
+            }
+        }
+    }
+ 
+        
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        
+        if(indexPath.row >= self.articleList.count - 1){
+            webservice.getMoreRootObjects(nextId: nextId, withSuccess: { (rootObject) in
+                self.articleList += rootObject.results
+                self.nextId = rootObject.nextId
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }
+        
+        
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellOverview", for: indexPath) as! TableViewCell
+        //cell = array[indexPath.row].title
+        
+        cell.article = articleList[indexPath.row];
+        cell.setData()
+        cell.runImageFetch()
+        
+        
+        
+        
+        //indexPath.row voor index van de array van de tableview
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

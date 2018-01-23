@@ -9,6 +9,11 @@
 import UIKit
 
 class RootObject: Decodable {
-    var results : [Article] = []
-    var nextId : Int = 0;  enum CodingKeys: String, CodingKey{    case results = "Results";    case nextId = "NextId"  }
+    public var results : [Article]
+    public var nextId : Int
+    
+    enum CodingKeys: String, CodingKey{
+        case results = "Results"
+        case nextId = "NextId"
+    }
 }

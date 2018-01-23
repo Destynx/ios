@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		514E8FD91F8E3CD30038DDB1 /* RootObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E8FD81F8E3CD30038DDB1 /* RootObject.swift */; };
+		514E8FDB1F8E3CE50038DDB1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E8FDA1F8E3CE50038DDB1 /* Article.swift */; };
+		514E8FDD1F8E3CFE0038DDB1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E8FDC1F8E3CFE0038DDB1 /* Category.swift */; };
+		514E8FE01F8E48C80038DDB1 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E8FDF1F8E48C80038DDB1 /* ApiManager.swift */; };
+		5159EDF21F8F62AF008CE9CC /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5159EDF11F8F62AF008CE9CC /* WebService.swift */; };
 		51955C9A1F8DFF9600F11E1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51955C991F8DFF9600F11E1D /* AppDelegate.swift */; };
-		51955C9C1F8DFF9600F11E1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51955C9B1F8DFF9600F11E1D /* ViewController.swift */; };
+		51955C9C1F8DFF9600F11E1D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51955C9B1F8DFF9600F11E1D /* DetailsViewController.swift */; };
 		51955C9F1F8DFF9600F11E1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51955C9D1F8DFF9600F11E1D /* Main.storyboard */; };
 		51955CA21F8DFF9600F11E1D /* Les_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51955CA01F8DFF9600F11E1D /* Les_1.xcdatamodeld */; };
 		51955CA41F8DFF9600F11E1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51955CA31F8DFF9600F11E1D /* Assets.xcassets */; };
 		51955CA71F8DFF9600F11E1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51955CA51F8DFF9600F11E1D /* LaunchScreen.storyboard */; };
+		51955CB31F8E042500F11E1D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51955CB21F8E042500F11E1D /* TableViewController.swift */; };
+		51955CB51F8E090A00F11E1D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51955CB41F8E090A00F11E1D /* TableViewCell.swift */; };
+		51EFB70E1FAF999700558FAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFB70D1FAF999700558FAC /* LoginViewController.swift */; };
+		51EFB7101FAFC08000558FAC /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFB70F1FAFC08000558FAC /* AuthToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		514E8FD81F8E3CD30038DDB1 /* RootObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootObject.swift; sourceTree = "<group>"; };
+		514E8FDA1F8E3CE50038DDB1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		514E8FDC1F8E3CFE0038DDB1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		514E8FDF1F8E48C80038DDB1 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		5159EDF11F8F62AF008CE9CC /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		51955C961F8DFF9600F11E1D /* Les 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Les 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51955C991F8DFF9600F11E1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		51955C9B1F8DFF9600F11E1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		51955C9B1F8DFF9600F11E1D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		51955C9E1F8DFF9600F11E1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51955CA11F8DFF9600F11E1D /* Les_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Les_1.xcdatamodel; sourceTree = "<group>"; };
 		51955CA31F8DFF9600F11E1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51955CA61F8DFF9600F11E1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51955CA81F8DFF9600F11E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51955CB21F8E042500F11E1D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		51955CB41F8E090A00F11E1D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		51EFB70D1FAF999700558FAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		51EFB70F1FAFC08000558FAC /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +55,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51379D9D1F8E36F000F23075 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				514E8FD81F8E3CD30038DDB1 /* RootObject.swift */,
+				514E8FDA1F8E3CE50038DDB1 /* Article.swift */,
+				514E8FDC1F8E3CFE0038DDB1 /* Category.swift */,
+				51EFB70F1FAFC08000558FAC /* AuthToken.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		514E8FDE1F8E471D0038DDB1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				514E8FDF1F8E48C80038DDB1 /* ApiManager.swift */,
+				5159EDF11F8F62AF008CE9CC /* WebService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		51955C8D1F8DFF9600F11E1D = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +94,18 @@
 		51955C981F8DFF9600F11E1D /* Les 1 */ = {
 			isa = PBXGroup;
 			children = (
+				514E8FDE1F8E471D0038DDB1 /* Services */,
+				51379D9D1F8E36F000F23075 /* Models */,
 				51955C991F8DFF9600F11E1D /* AppDelegate.swift */,
-				51955C9B1F8DFF9600F11E1D /* ViewController.swift */,
+				51955C9B1F8DFF9600F11E1D /* DetailsViewController.swift */,
 				51955C9D1F8DFF9600F11E1D /* Main.storyboard */,
 				51955CA31F8DFF9600F11E1D /* Assets.xcassets */,
 				51955CA51F8DFF9600F11E1D /* LaunchScreen.storyboard */,
 				51955CA81F8DFF9600F11E1D /* Info.plist */,
 				51955CA01F8DFF9600F11E1D /* Les_1.xcdatamodeld */,
+				51955CB21F8E042500F11E1D /* TableViewController.swift */,
+				51955CB41F8E090A00F11E1D /* TableViewCell.swift */,
+				51EFB70D1FAF999700558FAC /* LoginViewController.swift */,
 			);
 			path = "Les 1";
 			sourceTree = "<group>";
@@ -139,9 +182,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51955C9C1F8DFF9600F11E1D /* ViewController.swift in Sources */,
+				514E8FDB1F8E3CE50038DDB1 /* Article.swift in Sources */,
+				514E8FE01F8E48C80038DDB1 /* ApiManager.swift in Sources */,
+				51955CB51F8E090A00F11E1D /* TableViewCell.swift in Sources */,
+				51955C9C1F8DFF9600F11E1D /* DetailsViewController.swift in Sources */,
+				514E8FD91F8E3CD30038DDB1 /* RootObject.swift in Sources */,
+				51EFB7101FAFC08000558FAC /* AuthToken.swift in Sources */,
 				51955C9A1F8DFF9600F11E1D /* AppDelegate.swift in Sources */,
+				51955CB31F8E042500F11E1D /* TableViewController.swift in Sources */,
 				51955CA21F8DFF9600F11E1D /* Les_1.xcdatamodeld in Sources */,
+				5159EDF21F8F62AF008CE9CC /* WebService.swift in Sources */,
+				514E8FDD1F8E3CFE0038DDB1 /* Category.swift in Sources */,
+				51EFB70E1FAF999700558FAC /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +331,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78P2U86G4C;
 				INFOPLIST_FILE = "Les 1/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.example.Les-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,7 +347,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78P2U86G4C;
 				INFOPLIST_FILE = "Les 1/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.example.Les-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -9,5 +9,14 @@
 import UIKit
 
 class Category: Decodable {
-
+    
+    var id : Int
+    var name : String
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case id = "Id"
+        case name = "Name"
+        
+    }
 }
