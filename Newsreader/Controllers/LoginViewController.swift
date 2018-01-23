@@ -53,7 +53,7 @@ class LoginViewController : UIViewController {
         webservice.loguout()
         DispatchQueue.main.async {
             self.usernameInput.isHidden = false
-            self.usernameInput.isHidden = false
+            self.passwordInput.isHidden = false
             self.loginButton.isHidden = false
             self.logoutButton.isHidden = true
             self.passwordTextField.isHidden = false
