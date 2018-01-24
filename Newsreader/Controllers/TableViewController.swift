@@ -23,6 +23,28 @@ class TableViewController: UITableViewController {
             }
         })
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if(_webservice.flagged) {
+            _webservice.flagged = false
+            self.articleList = []
+            self.nextId = 0
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            _webservice.getRootObject(withSuccess: { (rootObject) in
+                self.articleList = rootObject.results
+                self.nextId = rootObject.nextId
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

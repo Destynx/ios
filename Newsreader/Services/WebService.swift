@@ -13,6 +13,7 @@ class WebService{
     
     var articleList : [Article] = []
     var authToken : AuthToken!
+    var flagged : Bool = false
     
     func getRootObject (withSuccess success: @escaping (RootObject)-> ()) {
         if (self.isLoggedIn()) {
@@ -41,6 +42,7 @@ class WebService{
     func executeLogin (username : String, password : String, withSuccess success: @escaping (Bool)-> (), orFailure failure: @escaping (Bool)-> ()) {
         manager.login(username: username, password : password, withSucces: { (AuthToken) in
             self.authToken = AuthToken
+            self.flagged = true
             success(true)
         }, orFailure: { (error) in
             failure(false)
@@ -48,6 +50,7 @@ class WebService{
     }
     
     func likeArticle(Id : Int, like : Bool){
+        self.flagged = true
         manager.likeArticle(Authtoken : self.authToken.AuthToken, Id: Id, like : like)
     }
     
@@ -62,6 +65,7 @@ class WebService{
     }
     
     func logout(){
-        authToken = nil;
+        self.authToken = nil;
+        self.flagged = true
     }
 }
