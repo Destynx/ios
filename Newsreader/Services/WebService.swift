@@ -39,8 +39,8 @@ class WebService{
 
     func executeLogin (username : String, password : String, withSuccess success: @escaping (Bool)-> (), orFailure failure: @escaping (Bool)-> ()) {
         manager.login(username: username, password : password, withSucces: { (AuthToken) in
-            success(true)
             self.authToken = AuthToken
+            success(true)
         }, orFailure: { (error) in
             failure(false)
         })
@@ -53,10 +53,17 @@ class WebService{
         manager.unLikeArticle(Authtoken : self.authToken.AuthToken, Id: Id)
     }
     
-    func loguout(){
-        if(authToken != nil){
-            authToken = nil;
+    func isLoggedIn() -> Bool {
+        if (authToken != nil) {
+            if (authToken.AuthToken != "") {
+                return true
+            }
         }
-        
+    
+        return false
+    }
+    
+    func logout(){
+        authToken = nil;
     }
 }

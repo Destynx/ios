@@ -26,27 +26,10 @@ class LoginViewController : UIViewController {
     }
 
     @IBAction func LoginButtonAction(_ sender: UIButton) {
-        username = usernameInput.text
-        password = passwordInput.text
-        
-        webservice.executeLogin(username : username, password : password, withSuccess: { (succes) in
-            if(succes == true){
-                DispatchQueue.main.async {
-                    self.usernameInput.isHidden = true
-                    self.passwordInput.isHidden = true
-                    self.loginButton.isHidden = true
-                    self.logoutButton.isHidden = false
-                    self.passwordTextField.isHidden = true
-                    self.usernameTextField.isHidden = true
-                    self.statusField.text = "Welkom \(self.usernameInput.text!)"
-                }
-            } else {
-                let message = UIAlertController(title: "Failure", message: "Username or Password is incorrect", preferredStyle: UIAlertControllerStyle.alert)
-                message.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.default, handler: nil))
-                DispatchQueue.main.async {
-                    self.present(message, animated: true, completion: nil)
-                }
-            }
+        webservice.executeLogin(username : (usernameInput?.text)!,
+                                password : (passwordInput?.text)!,
+                                withSuccess: { (succes) in
+            self.createPage()
         }, orFailure: { (error) in
             let message = UIAlertController(title: "Failure", message: "Username or Password is incorrect", preferredStyle: UIAlertControllerStyle.alert)
             message.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.default, handler: nil))
@@ -57,15 +40,31 @@ class LoginViewController : UIViewController {
     }
     
     @IBAction func logoutButton(_ sender: UIButton) {
-        webservice.loguout()
-        DispatchQueue.main.async {
-            self.usernameInput.isHidden = false
-            self.passwordInput.isHidden = false
-            self.loginButton.isHidden = false
-            self.logoutButton.isHidden = true
-            self.passwordTextField.isHidden = false
-            self.usernameTextField.isHidden = false
-            self.statusField.text = "Login"
+        webservice.logout()
+        self.createPage()
+    }
+    
+    private func createPage() {
+        if (self.webservice.isLoggedIn()) {
+            DispatchQueue.main.async {
+                self.usernameInput.isHidden = true
+                self.passwordInput.isHidden = true
+                self.loginButton.isHidden = true
+                self.logoutButton.isHidden = false
+                self.passwordTextField.isHidden = true
+                self.usernameTextField.isHidden = true
+                self.statusField.text = "Welkom \(self.usernameInput.text!)"
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.usernameInput.isHidden = false
+                self.passwordInput.isHidden = false
+                self.loginButton.isHidden = false
+                self.logoutButton.isHidden = true
+                self.passwordTextField.isHidden = false
+                self.usernameTextField.isHidden = false
+                self.statusField.text = "Login"
+            }
         }
     }
     
