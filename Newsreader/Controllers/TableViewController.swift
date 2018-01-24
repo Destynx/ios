@@ -29,6 +29,7 @@ class TableViewController: UITableViewController {
         
         if(_webservice.flagged) {
             _webservice.flagged = false
+            _webservice.flaggedRefresh = false
             self.articleList = []
             self.nextId = 0
             
@@ -43,6 +44,10 @@ class TableViewController: UITableViewController {
                     self.tableView.reloadData()
                 }
             })
+        } else if (_webservice.flaggedRefresh) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 

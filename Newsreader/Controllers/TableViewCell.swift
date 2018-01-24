@@ -12,6 +12,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var lableTitle: UILabel!
     @IBOutlet weak var lableDescription: UILabel!
+    @IBOutlet weak var LikeView: UIView!
     
     public var article : Article!
     
@@ -26,6 +27,11 @@ class TableViewCell: UITableViewCell {
     public func load(){
         lableTitle.text = article.title
         lableDescription.text = article.summary;
+        if(article.isliked) {
+            LikeView.isHidden = false
+        } else {
+            LikeView.isHidden = true
+        }
         self.fetchImage()
     }
 

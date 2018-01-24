@@ -13,6 +13,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var likeButton : UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var link: UITextView!
     
     var article : Article!
     
@@ -25,6 +26,7 @@ class DetailsViewController: UIViewController {
     func load() {
         self.titleLabel.text = article.title
         self.descriptionLabel.text = article.summary
+        self.link.text = article.url
         self.fetchImage()
         self.loadLikeButton()
     }

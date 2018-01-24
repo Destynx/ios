@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OB4-E4-E6r">
-                                            <rect key="frame" x="108" y="8" width="259" height="21"/>
+                                            <rect key="frame" x="108" y="8" width="254" height="21"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>
@@ -43,7 +43,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxR-hf-DEU">
-                                            <rect key="frame" x="108" y="34" width="259" height="60"/>
+                                            <rect key="frame" x="108" y="34" width="254" height="60"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>
@@ -53,21 +53,32 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2u-iA-Qpq">
+                                            <rect key="frame" x="370" y="0.0" width="5" height="100"/>
+                                            <color key="backgroundColor" red="0.95526013289070422" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="5" id="7B2-wv-sfM"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="OB4-E4-E6r" secondAttribute="trailing" constant="8" id="6dS-Gc-kE2"/>
                                         <constraint firstItem="OB4-E4-E6r" firstAttribute="top" secondItem="g3o-6y-lfz" secondAttribute="top" constant="8" id="E1h-nd-rlP"/>
+                                        <constraint firstItem="H2u-iA-Qpq" firstAttribute="top" secondItem="g3o-6y-lfz" secondAttribute="top" id="GB8-mS-xQa"/>
                                         <constraint firstItem="yxR-hf-DEU" firstAttribute="leading" secondItem="Khk-Id-Hm7" secondAttribute="trailing" constant="8" id="Gzd-Qj-72S"/>
                                         <constraint firstAttribute="bottom" secondItem="yxR-hf-DEU" secondAttribute="bottom" constant="8" id="XEl-eu-oDr"/>
                                         <constraint firstItem="OB4-E4-E6r" firstAttribute="leading" secondItem="Khk-Id-Hm7" secondAttribute="trailing" constant="8" id="Z1y-B1-LLV"/>
                                         <constraint firstItem="Khk-Id-Hm7" firstAttribute="top" secondItem="g3o-6y-lfz" secondAttribute="top" id="a6i-aJ-dcn"/>
+                                        <constraint firstItem="H2u-iA-Qpq" firstAttribute="leading" secondItem="OB4-E4-E6r" secondAttribute="trailing" constant="8" id="c7A-WO-2BG"/>
+                                        <constraint firstAttribute="trailing" secondItem="H2u-iA-Qpq" secondAttribute="trailing" id="jR9-ek-dc2"/>
                                         <constraint firstAttribute="bottom" secondItem="Khk-Id-Hm7" secondAttribute="bottom" id="m9i-An-tn5"/>
-                                        <constraint firstAttribute="trailing" secondItem="yxR-hf-DEU" secondAttribute="trailing" constant="8" id="rUy-LY-hWM"/>
+                                        <constraint firstItem="H2u-iA-Qpq" firstAttribute="leading" secondItem="yxR-hf-DEU" secondAttribute="trailing" constant="8" id="mtO-RO-yio"/>
                                         <constraint firstItem="yxR-hf-DEU" firstAttribute="top" secondItem="OB4-E4-E6r" secondAttribute="bottom" constant="5" id="sbv-Ic-tGw"/>
+                                        <constraint firstAttribute="bottom" secondItem="H2u-iA-Qpq" secondAttribute="bottom" id="vWI-uZ-flZ"/>
                                         <constraint firstItem="Khk-Id-Hm7" firstAttribute="leading" secondItem="g3o-6y-lfz" secondAttribute="leading" id="yo1-Gz-kHd"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="LikeView" destination="H2u-iA-Qpq" id="bF5-JT-uc7"/>
                                     <outlet property="cellImageView" destination="Khk-Id-Hm7" id="2un-M4-0nn"/>
                                     <outlet property="lableDescription" destination="yxR-hf-DEU" id="RE5-dS-Yem"/>
                                     <outlet property="lableTitle" destination="OB4-E4-E6r" id="adK-Z2-5Ix"/>
@@ -84,7 +95,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIj-lO-vwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-780" y="-759"/>
+            <point key="canvasLocation" x="-780" y="-759.67016491754134"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="A4c-V3-ANE">
@@ -123,7 +134,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="5000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvV-b7-lpo" userLabel="descriptionLabel">
-                                                <rect key="frame" x="8" y="335" width="359" height="211"/>
+                                                <rect key="frame" x="8" y="335" width="359" height="178"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
                                                         <attributes>
@@ -133,19 +144,35 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Nz-Mv-ZOg">
+                                                <rect key="frame" x="8" y="521" width="359" height="25"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="https://artikel.nl/2183">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="10"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="0Qt-aP-Obm" secondAttribute="trailing" id="3kk-pa-s86"/>
                                             <constraint firstItem="0Qt-aP-Obm" firstAttribute="top" secondItem="ki3-g8-ixq" secondAttribute="top" id="73K-F1-mzG"/>
                                             <constraint firstItem="1ZT-4N-qag" firstAttribute="top" secondItem="0Qt-aP-Obm" secondAttribute="bottom" constant="8" id="9gQ-aB-Hfz"/>
+                                            <constraint firstItem="1Nz-Mv-ZOg" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" constant="8" id="AlJ-US-Odu"/>
                                             <constraint firstItem="KvV-b7-lpo" firstAttribute="top" secondItem="xva-ne-F72" secondAttribute="bottom" constant="8" id="BUV-kZ-EMR"/>
-                                            <constraint firstAttribute="bottom" secondItem="KvV-b7-lpo" secondAttribute="bottom" constant="8" id="Hqt-TN-HIg"/>
+                                            <constraint firstAttribute="bottom" secondItem="1Nz-Mv-ZOg" secondAttribute="bottom" constant="8" id="Krj-Ey-LMt"/>
                                             <constraint firstItem="xva-ne-F72" firstAttribute="top" secondItem="1ZT-4N-qag" secondAttribute="bottom" constant="8" id="MKu-jn-fL9"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Nz-Mv-ZOg" secondAttribute="trailing" constant="8" id="OxY-Ls-gFg"/>
                                             <constraint firstItem="1ZT-4N-qag" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" constant="8" id="POD-Io-UJt"/>
                                             <constraint firstItem="xva-ne-F72" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" constant="16" id="XKW-dq-mmh"/>
                                             <constraint firstItem="KvV-b7-lpo" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" constant="8" id="ePU-6F-epM"/>
                                             <constraint firstItem="0Qt-aP-Obm" firstAttribute="leading" secondItem="ki3-g8-ixq" secondAttribute="leading" id="mGR-TY-Atn"/>
+                                            <constraint firstItem="1Nz-Mv-ZOg" firstAttribute="top" secondItem="KvV-b7-lpo" secondAttribute="bottom" constant="8" id="rA8-yY-iz4"/>
                                             <constraint firstAttribute="trailing" secondItem="KvV-b7-lpo" secondAttribute="trailing" constant="8" id="sqy-GP-Bhr"/>
                                             <constraint firstAttribute="trailing" secondItem="1ZT-4N-qag" secondAttribute="trailing" constant="8" id="wpZ-dI-IGK"/>
                                         </constraints>
@@ -174,6 +201,7 @@
                         <outlet property="descriptionLabel" destination="KvV-b7-lpo" id="gbf-ND-hZY"/>
                         <outlet property="imageView" destination="0Qt-aP-Obm" id="698-nl-udw"/>
                         <outlet property="likeButton" destination="xva-ne-F72" id="TMW-ZN-j3p"/>
+                        <outlet property="link" destination="1Nz-Mv-ZOg" id="hZc-70-WnT"/>
                         <outlet property="titleLabel" destination="1ZT-4N-qag" id="huL-5Y-BPq"/>
                     </connections>
                 </viewController>

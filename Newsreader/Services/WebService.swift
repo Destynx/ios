@@ -14,6 +14,7 @@ class WebService{
     var articleList : [Article] = []
     var authToken : AuthToken!
     var flagged : Bool = false
+    var flaggedRefresh : Bool = false
     
     func getRootObject (withSuccess success: @escaping (RootObject)-> ()) {
         if (self.isLoggedIn()) {
@@ -50,7 +51,7 @@ class WebService{
     }
     
     func likeArticle(Id : Int, like : Bool){
-        self.flagged = true
+        self.flaggedRefresh = true
         manager.likeArticle(Authtoken : self.authToken.AuthToken, Id: Id, like : like)
     }
     
