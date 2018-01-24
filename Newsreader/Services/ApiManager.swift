@@ -86,37 +86,21 @@ class ApiManager {
         }
     }
     
-    func likeArticle(Authtoken : String, Id : Int){
+    func likeArticle(Authtoken : String, Id : Int, like : Bool){
         if let url = URL(string: "/api/Articles/\(Id)/like", relativeTo: API_BASE_URL) {
             var request = URLRequest(url: url)
             // Set headers
             
             request.setValue("x-authtoken", forHTTPHeaderField: Authtoken)
-            request.httpMethod = "PUT"
+            if(like) {
+                request.httpMethod = "PUT"
+            } else {
+                request.httpMethod = "DELETE"
+            }
             let session = URLSession.shared;
             session.dataTask(with: request, completionHandler:{(
                 optData: Data?, reponse: URLResponse?, error: Error?) -> () in
-                
-                if let data = optData{
-                    do{
-                        
-                    }
-                }
-                
-                
-                //                if let data = optData{
-                //                    print(data)
-                //                    let authtoken = try JSONDecoder().decode(AuthToken.self, from: data)
-                //
-                //                    success(authtoken)
-                //                } else {
-                //                    print("NO JSON CONVERSION")
-                //                }
             }).resume()
         }
-    }
-    
-    func unLikeArticle(Authtoken : String, Id: Int){
-    
     }
 }

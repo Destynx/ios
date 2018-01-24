@@ -22,6 +22,7 @@
 		51EFB70E1FAF999700558FAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFB70D1FAF999700558FAC /* LoginViewController.swift */; };
 		51EFB7101FAFC08000558FAC /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFB70F1FAFC08000558FAC /* AuthToken.swift */; };
 		E99CDC5B2017FEAD0024B006 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CDC5A2017FEAD0024B006 /* Parameters.swift */; };
+		E99CDC5D20181AE60024B006 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CDC5C20181AE60024B006 /* Services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		51EFB70D1FAF999700558FAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		51EFB70F1FAFC08000558FAC /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		E99CDC5A2017FEAD0024B006 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		E99CDC5C20181AE60024B006 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				51955C991F8DFF9600F11E1D /* AppDelegate.swift */,
 				51955CA81F8DFF9600F11E1D /* Info.plist */,
 				E99CDC5A2017FEAD0024B006 /* Parameters.swift */,
+				E99CDC5C20181AE60024B006 /* Services.swift */,
 			);
 			path = Newsreader;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99CDC5D20181AE60024B006 /* Services.swift in Sources */,
 				514E8FDB1F8E3CE50038DDB1 /* Article.swift in Sources */,
 				514E8FE01F8E48C80038DDB1 /* ApiManager.swift in Sources */,
 				51955CB51F8E090A00F11E1D /* TableViewCell.swift in Sources */,

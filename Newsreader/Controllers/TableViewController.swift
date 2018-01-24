@@ -11,12 +11,11 @@ import UIKit
 class TableViewController: UITableViewController {
     var articleList: [Article] = [ ]
     var nextId : Int = 0
-    let webservice = WebService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webservice.getRootObject(withSuccess: { (rootObject) in
+        _webservice.getRootObject(withSuccess: { (rootObject) in
             self.articleList = rootObject.results
             self.nextId = rootObject.nextId
             DispatchQueue.main.async {
@@ -51,7 +50,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(indexPath.row >= self.articleList.count - 1){
-            webservice.getMoreRootObjects(nextId: nextId, withSuccess: { (rootObject) in
+            _webservice.getMoreRootObjects(nextId: nextId, withSuccess: { (rootObject) in
                 self.articleList += rootObject.results
                 self.nextId = rootObject.nextId
                 DispatchQueue.main.async {

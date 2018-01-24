@@ -15,7 +15,6 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     var article : Article!
-    let webservice = WebService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +26,7 @@ class DetailsViewController: UIViewController {
         self.titleLabel.text = article.title
         self.descriptionLabel.text = article.summary
         self.fetchImage()
+        self.loadLikeButton()
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,8 +34,23 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func likeOrDislike(_ sender: UIButton) {
-        if(article.isliked){webservice.unLikeArticle(Id: article.id)} else{webservice.likeArticle(Id: article.id)}
-        
+        if(_webservice.isLoggedIn()) {
+            _webservice.likeArticle(Id: article.id, like: !article.isliked)
+            article.isliked = !article.isliked
+            self.loadLikeButton()
+        } else {
+            let alert = UIAlertController(title: "Login", message: "Login is required to use this function", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Oke", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    private func loadLikeButton() {
+        if(article.isliked) {
+            likeButton.setTitle("Dislike", for: .normal)
+        } else {
+            likeButton.setTitle("Like", for: .normal)
+        }
     }
     
     private func fetchImage() {

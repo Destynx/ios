@@ -9,7 +9,6 @@
 import UIKit
 
 class LoginViewController : UIViewController {
-    var webservice = WebService()
     @IBOutlet weak var statusField: UILabel!
     @IBOutlet weak var usernameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
@@ -26,7 +25,7 @@ class LoginViewController : UIViewController {
     }
 
     @IBAction func LoginButtonAction(_ sender: UIButton) {
-        webservice.executeLogin(username : (usernameInput?.text)!,
+        _webservice.executeLogin(username : (usernameInput?.text)!,
                                 password : (passwordInput?.text)!,
                                 withSuccess: { (succes) in
             self.createPage()
@@ -40,12 +39,12 @@ class LoginViewController : UIViewController {
     }
     
     @IBAction func logoutButton(_ sender: UIButton) {
-        webservice.logout()
+        _webservice.logout()
         self.createPage()
     }
     
     private func createPage() {
-        if (self.webservice.isLoggedIn()) {
+        if (_webservice.isLoggedIn()) {
             DispatchQueue.main.async {
                 self.usernameInput.isHidden = true
                 self.passwordInput.isHidden = true

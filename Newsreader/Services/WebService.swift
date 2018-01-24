@@ -9,17 +9,10 @@
 import UIKit
 
 class WebService{
-    static let sharedInstance: WebService = {
-        let instance = WebService()
-        let manager : ApiManager = ApiManager()
-        var articleList : [Article] = []
-        var authToken : AuthToken!
-        return instance
-    }()
     private let manager : ApiManager = ApiManager()
+    
     var articleList : [Article] = []
     var authToken : AuthToken!
-    
     
     func getRootObject (withSuccess success: @escaping (RootObject)-> ()) {
         manager.getArticles(withSuccess: { (rootObject) in
@@ -45,12 +38,9 @@ class WebService{
             failure(false)
         })
     }
-    func likeArticle(Id : Int){
-        manager.likeArticle(Authtoken : self.authToken.AuthToken, Id: Id)
-    }
     
-    func unLikeArticle(Id : Int){
-        manager.unLikeArticle(Authtoken : self.authToken.AuthToken, Id: Id)
+    func likeArticle(Id : Int, like : Bool){
+        manager.likeArticle(Authtoken : self.authToken.AuthToken, Id: Id, like : like)
     }
     
     func isLoggedIn() -> Bool {
