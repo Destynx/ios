@@ -36,16 +36,14 @@ class WebService{
             
         }
     }
-    
-    
-    
-    func executeLogin (username : String, password : String, withSuccess success: @escaping (Bool)-> ()) {
+
+    func executeLogin (username : String, password : String, withSuccess success: @escaping (Bool)-> (), orFailure failure: @escaping (Bool)-> ()) {
         manager.login(username: username, password : password, withSucces: { (AuthToken) in
             success(true)
             self.authToken = AuthToken
-        }) { (error:String) in
-            
-        }
+        }, orFailure: { (error) in
+            failure(false)
+        })
     }
     func likeArticle(Id : Int){
         manager.likeArticle(Authtoken : self.authToken.AuthToken, Id: Id)

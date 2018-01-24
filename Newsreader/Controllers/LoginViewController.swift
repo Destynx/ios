@@ -15,38 +15,45 @@ class LoginViewController : UIViewController {
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var passwordTextField: UILabel!
+    @IBOutlet weak var usernameTextField: UILabel!
+    
     var username : String!
     var password : String!
     
-    
-    @IBOutlet weak var passwordTextField: UILabel!
-    @IBOutlet weak var usernameTextField: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
     }
 
     @IBAction func LoginButtonAction(_ sender: UIButton) {
-        var useThisName : String
         username = usernameInput.text
         password = passwordInput.text
-        useThisName = usernameInput.text!
         
         webservice.executeLogin(username : username, password : password, withSuccess: { (succes) in
-                    if(succes == true){
-                        DispatchQueue.main.async {
-                            self.usernameInput.isHidden = true
-                            self.passwordInput.isHidden = true
-                            self.loginButton.isHidden = true
-                            self.logoutButton.isHidden = false
-                            self.passwordTextField.isHidden = true
-                            self.usernameTextField.isHidden = true
-                            self.statusField.text = "Welkom \(useThisName)"
-                        }
-                        
-                    }
-            })
+            if(succes == true){
+                DispatchQueue.main.async {
+                    self.usernameInput.isHidden = true
+                    self.passwordInput.isHidden = true
+                    self.loginButton.isHidden = true
+                    self.logoutButton.isHidden = false
+                    self.passwordTextField.isHidden = true
+                    self.usernameTextField.isHidden = true
+                    self.statusField.text = "Welkom \(self.usernameInput.text!)"
+                }
+            } else {
+                let message = UIAlertController(title: "Failure", message: "Username or Password is incorrect", preferredStyle: UIAlertControllerStyle.alert)
+                message.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.default, handler: nil))
+                DispatchQueue.main.async {
+                    self.present(message, animated: true, completion: nil)
+                }
+            }
+        }, orFailure: { (error) in
+            let message = UIAlertController(title: "Failure", message: "Username or Password is incorrect", preferredStyle: UIAlertControllerStyle.alert)
+            message.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.default, handler: nil))
+            DispatchQueue.main.async {
+                self.present(message, animated: true, completion: nil)
+            }
+        })
     }
     
     @IBAction func logoutButton(_ sender: UIButton) {
@@ -65,6 +72,4 @@ class LoginViewController : UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
 }
-
