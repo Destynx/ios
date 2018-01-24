@@ -8,4 +8,4 @@
 
 import Foundation
 
-let API_BASE_URL = URL(string: "https://inhollandbackend.azurewebsites.net")
+let API_BASE_URL = "https://inhollandbackend.azurewebsites.net"

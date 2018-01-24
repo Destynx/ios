@@ -15,18 +15,26 @@ class WebService{
     var authToken : AuthToken!
     
     func getRootObject (withSuccess success: @escaping (RootObject)-> ()) {
-        manager.getArticles(withSuccess: { (rootObject) in
-            success(rootObject)
-        }) { (error:String) in
-            
+        if (self.isLoggedIn()) {
+            self.manager.getArticles(authToken: self.authToken.AuthToken, withSuccess: { (rootObject) in
+                success(rootObject)
+            }, orFailure: {(error) in })
+        } else {
+            self.manager.getArticles(authToken: "", withSuccess: { (rootObject) in
+                success(rootObject)
+            }, orFailure: {(error) in })
         }
     }
     
     func getMoreRootObjects (nextId : Int, withSuccess success: @escaping (RootObject)-> ()) {
-        manager.getMoreArticles(nextId: nextId, withSuccess: { (rootObject) in
-            success(rootObject)
-        }) { (error:String) in
-            
+        if (self.isLoggedIn()) {
+            manager.getMoreArticles(nextId: nextId, authToken: self.authToken.AuthToken, withSuccess: { (rootObject) in
+                success(rootObject)
+            }, orFailure: {(error) in })
+        } else {
+            manager.getMoreArticles(nextId: nextId, authToken: "", withSuccess: { (rootObject) in
+                success(rootObject)
+            }, orFailure: {(error) in })
         }
     }
 
