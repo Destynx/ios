@@ -44,8 +44,6 @@ class TableViewController: UITableViewController {
             if let cell = sender as? TableViewCell
             {
                 viewController.article = cell.article
-                viewController.titleText = cell.lableTitle.text;
-                viewController.descriptionText = cell.lableDescription.text;
             }
         }
     }

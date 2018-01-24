@@ -9,7 +9,6 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var lableTitle: UILabel!
     @IBOutlet weak var lableDescription: UILabel!

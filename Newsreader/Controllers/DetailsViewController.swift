@@ -9,33 +9,35 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
-    var article : Article!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var likeButton : UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    var titleText: String?=nil
-    var descriptionText: String?=nil
+    
+    var article : Article!
     let webservice = WebService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = titleText;
-        descriptionLabel.text = descriptionText;
-        fetchImage()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        load()
     }
 
+    func load() {
+        self.titleLabel.text = article.title
+        self.descriptionLabel.text = article.summary
+        self.fetchImage()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func likeOrDislike(_ sender: UIButton) {
         if(article.isliked){webservice.unLikeArticle(Id: article.id)} else{webservice.likeArticle(Id: article.id)}
         
-        
-        
     }
+    
     private func fetchImage() {
         let imageURL = URL(string: (article.image))
         var image: UIImage?
